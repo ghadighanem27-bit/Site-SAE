@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/mobile.css" />
+    <link rel="stylesheet" href="../css/subnav.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>E.Carrechan</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-container">
+        <!-- Logo + Nom + lien vers accueil -->
+        <a href="../index.html" class="logo-container">
+          <img src="../img/logo.png" alt="Logo" class="logo" />
+          <h1 id="company-name">
+            <span class="r">E</span>
+            <span class="v">.</span>
+            <span class="b">Carre</span>
+            <span class="v">chan</span>
+          </h1>
+        </a>
+      </div>
+
+      <nav>
+        <ul class="nav">
+          <li class="infobulle">
+            <a href="../algorithmes/index.html">Algorithmes</a>
+            <ul class="infobulle-text">
+              <li></li>
+            </ul>
+          </li>
+
+          <li class="infobulle">
+            <a href="../fonctionnalites/index.html">Fonctionnalités</a>
+            <ul class="infobulle-text">
+              <li></li>
+            </ul>
+          </li>
+
+          <li class="infobulle">
+            <a href="../difficultes/index.html" class="active">Difficultés</a>
+          </li>
+
+          <li class="infobulle">
+            <a href="../conclusion/index.html">Conclusion</a>
+            <ul class="infobulle-text">
+              <li></li>
+            </ul>
+          </li>
+
+          <li class="infobulle">
+            <a href="../mission/index.html">Missions</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- checkbox mobile seulement -->
+      <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+      <label for="nav-toggle" class="hamburger" aria-label="Ouvrir le menu">
+        <span></span>
+      </label>
+    </header>
+
+    <main class="difficultes">
+      <div class="description">
+        <h2>Difficultés rencontrées</h2>
+        <p>
+          Voici les difficultés que nous avons rencontrées durant notre projet
+          au cours des séances, ainsi que les solutions que nous avons pu
+          trouver.
+        </p>
+      </div>
+
+      <table>
+        <tr>
+          <th>Seance</th>
+          <th>Ghadi</th>
+          <th>Robin</th>
+          <th>Kais</th>
+          <th>Gabriel</th>
+          <th>Maxim</th>
+          <th>Mathieu</th>
+        </tr>
+        <tr>
+          <td>Seance 1</td>
+          <td>
+            Durant cette séance, j'ai rencontré des difficultés sur le fichier
+            lit.csv ; nous n'avons pas pu le faire fonctionner correctement.
+          </td>
+          <td>
+            Durant ma première séance, j'ai rencontré des difficultés sur le
+            fichier lit.csv nous n'avons pas pu le faire fonctionner
+            correctement. À poursuivre.
+          </td>
+          <td>
+            Durant la première séance, j'ai rencontré des difficultés pour lire
+            d'autres fichiers que celui de base. Nous n'arrivions pas à lire de
+            nombreuses lignes des autres fichiers CSV.
+          </td>
+          <td>
+            Au cours de la première séance, nous avons notamment, avec Kais et
+            Mathieu, rencontré des difficultés pour lire l'intégralité des
+            lignes des fichiers CSV. Néanmoins, nous avons réussi à lire et
+            afficher une partie du fichier CSV dans Visual Studio Code.
+          </td>
+          <td>
+            Durant ma première séance, j'ai rencontré des difficultés sur le
+            fichier lit.csv nous n'avons pas pu le faire fonctionner
+            correctement.
+          </td>
+          <td>
+            Durant ma première séance, j'ai commencé a travaillé sur le fichir
+            lit_cvs pour pouvoir lire un fichier csv. Mais pas encore de
+            solution pour l'affichage de données et on a reussit a afficher
+            l'entete.
+          </td>
+        </tr>
+        <tr>
+          <td>Seance 2</td>
+          <td>
+            Durant cette séance, nous avons toujours rencontré des difficultés à
+            utiliser lit_csv pour notre projet.
+          </td>
+          <td>
+            Durant cette séance, j'ai encore une fois rencontré des difficultés
+            avec le fichier lit.csv : il n'affiche que quelques colonnes avec
+            des écarts.
+          </td>
+          <td>
+            Durant cette séance, on a réussit à afficher les premières valeurs
+            du fichier csv. Mais elles ne s'affichent pas toutes encore et sont
+            mal ordonnées.
+          </td>
+          <td>
+            Lors de la 2ᵉ séance, j'ai rencontré des difficultés d'affichage
+            lors de la lecture du fichier CSV à cause de l'absence de valeurs
+            dans certaines colonnes, ce qui a été résolu grâce à la valeur NULL.
+          </td>
+          <td>
+            Durant ma seconde séance, nous étions toujours sur le fichier CSV
+            pour essayer de le faire fonctionner.
+          </td>
+          <td>
+            J'ai continué de travaillé sur le fichier de leture pour un fichier
+            csv mais nous n'avons pas trouvé de solution
+          </td>
+        </tr>
+        <tr>
+          <td>Seance 3</td>
+          <td>
+            Durant cette séance, on a décidé que je commence à faire ce site
+            pour être plus efficace ; il n'y a pas eu de difficulté
+            particulière.
+          </td>
+          <td>
+            Durant cette séance, j'ai rencontré des difficultés sur la gestion
+            du stock. Pour l'instant, j'ai seulement commencé à travailler sur
+            une fonction permettant de compter le nombre d'éléments de type VRAC
+            dans le tableau.
+          </td>
+          <td>
+            Durant cette séance, on a réussit à lire tout le fichier csv et à
+            l'afficher. Pour autant, il reste des problèmes d'affichage.Le
+            retour n'est pas ordoné.
+          </td>
+          <td>
+            Durant la 3ᵉ séance, nous avons rencontré des difficultés sur les
+            attentes du service client, plus particulièrement sur la facture
+            attendue.
+          </td>
+          <td>
+            Durant ma troisième séance, nous avons enfin réussi à lire les logs.
+            cela était du a la présence d'un point virgule dans certains log
+          </td>
+          <td>
+            on a enfin reussit a lire les donnée des fichier csv ce qui nous
+            bloquait etait le ";". Monsieur Abel nous a données des log avec
+            des",".
+          </td>
+        </tr>
+        <tr>
+          <td>Seance 4</td>
+          <td>
+            Durant cette séance, je n'ai pas eu de difficulté ; je continue le
+            site.
+          </td>
+          <td>
+            Durant cette séance, j'ai continué à travailler sur la fonction qui
+            permet de compter le nombre de produits de type « PRODUIT » présents
+            dans un tableau.
+          </td>
+          <td>
+            Durant cette séance, j'ai travaillé avec Gabriel pour la crétion
+            d'un menu interactif permetant l'acces au différentes ressources,
+            mais nous n'avons pas complètement reussit. De plus j'ai aidé Ghadi
+            et Robin à régler leurs difficultées dans leurs programme.
+          </td>
+          <td>
+            Au cours de cette séance, avec Kais, nous avons rencontrés des
+            dificulté lors de la réalisation d'un menu interractif afin d'adapté
+            la réponse au attende de l'utilisateur, car il était impossible de
+            créer de l'interracton et de lire les fichiers csv.
+          </td>
+          <td>
+            Durant cette séance, nous avons avec Mathieu commencé a travaillé
+            sur la fonction comptabilité journalière mais nous avons rencontré
+            des difficultés pour la lecture des log.
+          </td>
+          <td>
+            J'ai commencé a travaillé sur la fonction de comptabilité par jour
+            et a son architecture avec Maxim ce qui nous a posé probleme c'est
+            la lecture des données car on pouvait pas lire 2 fois le fichier csv
+            car la fonction supprimé sont contenu.
+          </td>
+        </tr>
+        <tr>
+          <td>Seance 5</td>
+          <td>
+            Durant cette séance, je n'ai pas eu de difficulté ; je continue le
+            site.
+          </td>
+          <td>
+            Durant cette séance, j'ai continué à essayer de faire fonctionner la
+            fonction qui cherche les éléments de type « PRODUIT » dans le
+            tableau des ventes.
+          </td>
+          <td>
+            Durant cette séance, on a réalié une fonction besoin client pouvant
+            sortir un fichier txt.Elle n'est pas oppérationelle, mais on a
+            presque reussit à la finalisée.
+          </td>
+          <td>
+            Lors de cette séance la difficulté étais de pouvoir séparé chaque
+            ticket de caisse en fonction du client id.
+          </td>
+          <td>
+            Durant cette séance, notre fonction comptabilité fonctionne pour
+            certains log mais pas d'autres (problème de point virgule)
+          </td>
+          <td>
+            Avec maxim on a mis au point la fonction conta pour une log et
+            l'avons testé (sa marche) pas de probleme precis mis a pars la
+            reeslution de la scéance 4.
+          </td>
+        </tr>
+        <tr>
+          <td>Seance 6</td>
+          <td>
+            Durant cette séance, j'ai refait le lit_csv pour faire en sorte que
+            chaque colonne du tableau soit un tableau séparé, qui sera combiné
+            en fonction de nos besoins. Nous avons particulièrement eu des
+            difficultés pour ne pas utiliser « extern » ; nous avons trouvé
+            comme solution, même si longue, de déclarer les tableaux nécessaires
+            dans chaque fonction à chaque fois.
+          </td>
+          <td>
+            Durant cette séance, j'ai aidé Ghadi à refaire le lit_csv pour que
+            chaque colonne du tableau soit séparée et combinée selon nos
+            besoins. Nous avons particulièrement eu des difficultés pour ne pas
+            utiliser « extern » ; nous avons donc dû trouver une autre solution.
+          </td>
+          <td>
+            Durant cette séance, on a réussit à creer une base des factures. Il
+            nous reste plus qu'a limité l'affichage en fonction du caissières
+            id.
+          </td>
+          <td>
+            Pour cette séance la dificulté étais d'implémenter la fonction
+            comptabilité a nos tickets de caisse ca la fonction empécher
+            l'affichage des produits .
+          </td>
+          <td>absence (rdv médical)</td>
+          <td>
+            J'ai commencé a travaillé sur la fonction de contabilité
+            hebdomadaire pas de porbleme particulié mis a pars les probleme de
+            mes camarades que j'ai essayé d'aidé (sans reussite)
+          </td>
+        </tr>
+        <tr>
+          <td>Seance 7</td>
+          <td>
+            Durant cette séance, j'ai terminé la fonction lit_csv et commencé la
+            gestion des stocks pour compter le nombre de produits vendus et de
+            vrac séparément ; j'ai rencontré des difficultés surtout pour lire
+            toutes les lignes du fichier CSV.
+          </td>
+          <td>
+            Durant cette séance, avec Ghadi, nous avons commencé à travailler
+            sérieusement sur la gestion des stocks qui nous pose la difficulté
+            de compter les éléments du tableau.
+          </td>
+          <td>
+            Durant cette séance, on essayé d'améliorer notre fonction de lecture
+            des lignes mais on a pas encore reussit complètement.
+          </td>
+          <td>
+            Aucune dificulté pour cette séance là jai réalisé toutes mais
+            attentes à la fin des 2h.
+          </td>
+          <td>
+            Durant cette séance, avec Mathieu nous avons travaillé sur une
+            fonction comptabilité hebdomadaire mais nous sommes rendu compte de
+            la difficultéde celle ci sans fopen
+          </td>
+          <td>
+            Avec Maxim on a compris que sans la fonctionnalité "fopen" on ne
+            pouvait pas faire la fonction de comptabilité hebdomadaire
+          </td>
+        </tr>
+        <tr>
+          <td>Seance 8</td>
+          <td>
+            Durant cette séance, j'ai continué la fonction quantiteGlobaleVendu
+            et j'ai réglé le bug qui nous permettait de lire tout le fichier
+            CSV.
+          </td>
+          <td>
+            Durant cette séance, j'ai continué à travailler sur la fonction qui
+            permet de compter le nombre d'éléments de type « PRODUIT » dans le
+            tableau.
+          </td>
+          <td>
+            Durant cette séance, on a réussit a obtenir le rendu souhaité pour
+            notre facture, il faut juste reussir le total global.
+          </td>
+          <td>Lors de cette séance le même problème que la séance 5 .</td>
+          <td>
+            Durant cette séance, dernière tentative de créer une fonction
+            comptabilité hebdomadaire et documentation de comptabilité
+            journalière .
+          </td>
+          <td>
+            Cette scéance j'ai remarqué que les logs de caissières n'etait pas
+            utilisé ducoup j'ai eu des idées pour faire les fonction
+            covoiturages... tout sa dans le fichier gestion personnelle
+          </td>
+        </tr>
+        <tr>
+          <td>Seance 9</td>
+          <td>
+            Durant cette séance, j'ai finalisé la fonction quantiteGlobaleVendu.
+          </td>
+          <td>
+            Durant cette séance, j'ai terminé la fonction qui compte le nombre
+            d'éléments de type « PRODUITS » et j'ai accompagné Ghadi pour sa
+            fonction quantiteGlobaleVendu.
+          </td>
+          <td>
+            Durant cette séance, on a amélioré notre code pour qu'il soit mieux
+            agencé et complété la focntion facture.
+          </td>
+          <td>
+            LOrs de cette séance nous avons optimisé la fontion lecture des
+            fichier csv la difficulté étais donc d'adapter les autres programmes
+            à cette nouvelles fonctions.
+          </td>
+          <td>
+            avec Mathieu nous avons nettoyé la fonction comptabilité et tenter
+            de créer un menu interactif avec "case" cettes idée sera plus tard
+            abandonner .
+          </td>
+          <td>
+            J'ai nettoyé la fonction compta pour un code plus clair et j'ai
+            commencé un menu intéractif
+          </td>
+        </tr>
+        <tr>
+          <td>Seance 10</td>
+          <td>
+            Durant cette séance, j'ai aidé Gabriel à faire fonctionner les
+            fonctions de service client.
+          </td>
+          <td>
+            Durant cette séance, j'ai commencé à m'occuper de remplir toutes les
+            pages du site HTML.
+          </td>
+          <td>
+            Durant cette séance, on a finit notre fonction facture pour chaque
+            client id. Notre projet est casiment finit.
+          </td>
+          <td>
+            Lors de cette séance jai rencontrés la même difficulté qu'à la
+            séance 5 et 8 mais avec l'aide de Ghadi et Mathieu nous avons réussi
+            à résoudre le problème.
+          </td>
+          <td>
+            Durant cette séance nous avons abandonné le menu interactif et j'ai
+            commencé a travaillé sur les pages html qui me concerne.
+          </td>
+          <td>
+            J'ai abandonné le projet du menu interactif car pour pouvoir le
+            faire il nous fallait des outils qu'on n'avait pas vu en cours
+            (qu'on a pas le droit d'utilisé)
+          </td>
+        </tr>
+        <tr>
+          <td>Seance 11</td>
+          <td>
+            Durant cette séance, j'ai finalisé mes fonctions et j'ai commencé à
+            aider mes camarades.
+          </td>
+          <td>
+            Durant cette séance, j'ai fini une grande partie du HTML, revérifié
+            les différents éléments en C et vérifié que tout fonctionne pour la
+            gestion des stocks. J'ai aussi commencé à rédiger le fichier README.
+          </td>
+          <td>
+            Durant cette séance, on a finit notre projet, améliroré la
+            documentation et les commentaire; De plus, on a complété le read me.
+          </td>
+          <td>
+            Lors de cette séance la difficulté étais de réaliser les
+            optimisation laissé à plus tard car étant difficile et peut
+            significatives.
+          </td>
+          <td>
+            Durant cette séance, avec Mathieu nous avons travaillé le doxyfile
+            moi des fonctions compta covoiturage et genre.
+          </td>
+          <td>
+            Avec Maxim on a commencé le doxyfile sur notre fonction conta et moi
+            sur mon fichier gestion personnelle
+          </td>
+        </tr>
+        <tr>
+          <td>Seance 12</td>
+          <td>
+            Durant cette séance, on s'est rendu compte que la fonction de
+            gestion du personnel n'était pas compatible avec ma fonction de
+            lecture ; nous avons dû la modifier et finaliser le rendu de notre
+            projet.
+          </td>
+          <td>
+            Durant cette séance, j'ai aidé Ghadi à finir la documentation de la
+            gestion des stocks et terminé la rédaction du fichier README.
+          </td>
+          <td>
+            Durant cette séance, on a résolue les derniers problèmes présent et
+            on a rendu la SAE.
+          </td>
+          <td>
+            Nous avons mis en forme l'integralité du projet donc aucun problème
+            pour cette séance.
+          </td>
+          <td>
+            Durant cette séance, j'ai réalisé le doxyfile des fonctions
+            restantes avec ghadi et Mathieu nous sommes resté un peu plus tard
+            afin de rendre la sae comme il le faut
+          </td>
+          <td>
+            Avec le groupe on a mis au point des petit soucis rencontré afin que
+            la SAE soit rendu et pour que tout fonctionne avec Ghadi et Maxim on
+            est resté un peu plus tard pour rendre le projet dans de bonne
+            circonstance
+          </td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>

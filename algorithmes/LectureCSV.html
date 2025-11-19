@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/mobile.css" />
+    <link rel="stylesheet" href="../css/subnav.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>E.Carrechan</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-container">
+        <a href="../index.html" class="logo-container">
+          <img src="../img/logo.png" alt="Logo" class="logo" />
+          <h1 id="company-name">
+            <span class="r">E</span>
+            <span class="v">.</span>
+            <span class="b">Carre</span>
+            <span class="v">chan</span>
+          </h1>
+        </a>
+      </div>
+
+      <nav>
+        <ul class="nav">
+          <li class="infobulle">
+            <a href="../algorithmes/index.html" class="active">Algorithmes</a>
+          </li>
+          <li class="infobulle">
+            <a href="../fonctionnalites/index.html">Fonctionnalités</a>
+          </li>
+          <li class="infobulle">
+            <a href="../difficultes/index.html">Difficultés</a>
+          </li>
+          <li class="infobulle">
+            <a href="../conclusion/index.html">Conclusion</a>
+          </li>
+          <li class="infobulle">
+            <a href="../mission/index.html">Missions</a>
+          </li>
+        </ul>
+      </nav>
+
+      <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+      <label for="nav-toggle" class="hamburger" aria-label="Ouvrir le menu">
+        <span></span>
+      </label>
+    </header>
+
+    <main>
+      <div class="description">
+        <h2>Lecture des données CSV</h2>
+      </div>
+
+      <div class="subnav-contour">
+        <nav class="sub-nav">
+          <ul>
+            <li><a href="index.html">⬅</a></li>
+            <li><a href="LectureCSV.html" class="active">Lecture CSV</a></li>
+            <li><a href="GestionStock.html">Gestion Stock</a></li>
+            <li><a href="GestionPersonnel.html">Gestion Personnel</a></li>
+            <li><a href="ServiceClient.html">Service Client</a></li>
+            <li><a href="Comptabilite.html">Comptabilité</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <section class="code">
+        <h3>Fonctionnement</h3>
+        <pre>
+          <code>
+            
+void afficherLigneSeparation(int nbCaractere) {
+  for (int i = 0; i < nbCaractere; i++) {
+    printf("-");
+  }
+  printf("\n");
+}
+
+/**
+ *  @brief extrait la premiere ligne des fichiers CSV qui représente l'entete
+ * 
+ *  @param l'entete des fichier CSV a la premiere ligne
+ * 
+ *  @return lit l'entete du tableau
+ */
+
+int lireEntete(char entetes[NB_COLONNES][TAILLE_CHAMP]) {
+  return scanf(
+             "%63[^,],%63[^,],%63[^,],%63[^,],%63[^,],%63[^,],%63[^,],%63[^\n]",
+             entetes[0], entetes[1], entetes[2], entetes[3], entetes[4],
+             entetes[5], entetes[6], entetes[7]) == NB_COLONNES;
+}
+          </code>
+        </pre>
+        <p>
+          L'algorithme lit le fichier CSV ligne par ligne, extrait chaque champ
+          selon le délimiteur, et stocke les données dans les structures
+          appropriées.
+        </p>
+      </section>
+      <section class="code">
+        <pre>
+          <code>
+int lireLigne(int index, char entetes[NB_COLONNES][TAILLE_CHAMP],
+              char dates[MAX_LIGNES][20],
+              char produits[MAX_LIGNES][TAILLE_CHAMP],
+              float quantites[MAX_LIGNES], float prixUnitaires[MAX_LIGNES],
+              int caissiere_id[MAX_LIGNES], double client_id[MAX_LIGNES],
+              char type[MAX_LIGNES][TAILLE_CHAMP], long long ean[MAX_LIGNES]) {
+  char ligne[512];
+  if (!fgets(ligne, sizeof(ligne), stdin))
+    return 0;
+
+  ligne[strcspn(ligne, "\r\n")] = '\0';
+
+  int champ = 0;
+  char *ptr = ligne;
+  char *token;
+
+  while ((token = strsep(&ptr, ",")) != NULL) {
+    switch (champ) {
+    case 0:
+      strncpy(dates[index], token, sizeof(dates[index]) - 1);
+      dates[index][sizeof(dates[index]) - 1] = '\0';
+      break;
+    case 1:
+      caissiere_id[index] = atoi(token);
+      break;
+    case 2:
+      client_id[index] = (*token) ? atof(token) : -1;
+      break;
+    case 3:
+      strncpy(type[index], token, sizeof(type[index]) - 1);
+      type[index][sizeof(type[index]) - 1] = '\0';
+      break;
+    case 4:
+      ean[index] = atoll(token);
+      break;
+    case 5:
+      strncpy(produits[index], token, sizeof(produits[index]) - 1);
+      produits[index][sizeof(produits[index]) - 1] = '\0';
+      break;
+    case 6:
+      prixUnitaires[index] = atof(token);
+      break;
+    case 7:
+      quantites[index] = atoi(token);
+      break;
+    }
+    champ++;
+  }
+
+  return (champ >= NB_COLONNES);
+}            
+          </code>
+        </pre>
+        <p>
+          Cette fonction lit une ligne du fichier CSV, extrait chaque champ en
+          fonction du délimiteur, et stocke les données dans les tableaux
+          appropriés.
+        </p>
+      </section>
+      <section>
+        <pre>
+          <code>
+ void afficherEntete(char entetes[NB_COLONNES][TAILLE_CHAMP]) {
+  afficherLigneSeparation(195);
+  printf("| %20s | %15s | %15s | %15s | %15s | %60s | %15s | %15s |\n",
+         entetes[0], entetes[1], entetes[2], entetes[3], entetes[4], entetes[5],
+         entetes[6], entetes[7]);
+  afficherLigneSeparation(195);
+}
+
+void afficherLigne(int index, char entetes[NB_COLONNES][TAILLE_CHAMP],
+                   char dates[MAX_LIGNES][20],
+                   char produits[MAX_LIGNES][TAILLE_CHAMP],
+                   float quantites[MAX_LIGNES], float prixUnitaires[MAX_LIGNES],
+                   int caissiere_id[MAX_LIGNES], double client_id[MAX_LIGNES],
+                   char type[MAX_LIGNES][TAILLE_CHAMP],
+                   long long ean[MAX_LIGNES]) {
+  if (client_id[index] < 0) {
+    printf("| %20s | %15d |         -       | %15s | %15lld | %60s | %15.2f | "
+           "%15f |\n",
+           dates[index], caissiere_id[index], type[index], ean[index],
+           produits[index], prixUnitaires[index], quantites[index]);
+  } else {
+    printf("| %20s | %15d | %15.0lf | %15s | %15lld | %60s | %15.2f | %15f |\n",
+           dates[index], caissiere_id[index], client_id[index], type[index],
+           ean[index], produits[index], prixUnitaires[index], quantites[index]);
+  }
+}
+
+int affichage(char entetes[NB_COLONNES][TAILLE_CHAMP], char dates[MAX_LIGNES][20],
+            char produits[MAX_LIGNES][TAILLE_CHAMP], float quantites[MAX_LIGNES],
+            float prixUnitaires[MAX_LIGNES], int caissiere_id[MAX_LIGNES],
+            double client_id[MAX_LIGNES], char type[MAX_LIGNES][TAILLE_CHAMP],
+            long long ean[MAX_LIGNES]) {
+  int nbLignes = 0;
+
+  if (!lireEntete(entetes)) {
+    fprintf(stderr, "Erreur lecture entête\n");
+    return 1;
+  }
+
+  int c;
+  while ((c = getchar()) != '\n' && c != EOF)
+    ;
+
+ 
+  while (nbLignes < MAX_LIGNES &&
+         lireLigne(nbLignes, entetes, dates, produits, quantites, prixUnitaires,
+                   caissiere_id, client_id, type, ean)) {
+    nbLignes++;
+  }
+
+  return 0;
+}
+
+          </code>
+        </pre>
+        <p>
+          Ces fonctions affichent l'entête et les lignes de données du fichier
+          CSV dans un format tabulaire lisible.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

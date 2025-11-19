@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/mobile.css" />
+    <title>E.Carrechan</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-container">
+        <!-- Logo + Nom + lien vers accueil -->
+        <a href="../index.html" class="logo-container">
+          <img src="../img/logo.png" alt="Logo" class="logo" />
+          <h1 id="company-name">
+            <span class="r">E</span>
+            <span class="v">.</span>
+            <span class="b">Carre</span>
+            <span class="v">chan</span>
+          </h1>
+        </a>
+      </div>
+
+      <nav>
+        <ul class="nav">
+          <li class="infobulle">
+            <a href="../algorithmes/index.html">Algorithmes</a>
+            <ul class="infobulle-text">
+              <li></li>
+            </ul>
+          </li>
+
+          <li class="infobulle">
+            <a href="../fonctionnalites/index.html" class="active"
+              >Fonctionnalités</a
+            >
+            <ul class="infobulle-text">
+              <li></li>
+            </ul>
+          </li>
+
+          <li class="infobulle">
+            <a href="../difficultes/index.html">Difficultés</a>
+          </li>
+
+          <li class="infobulle">
+            <a href="../conclusion/index.html">Conclusion</a>
+            <ul class="infobulle-text">
+              <li></li>
+            </ul>
+          </li>
+
+          <li class="infobulle">
+            <a href="../mission/index.html">Missions</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- checkbox mobile seulement -->
+      <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+      <label for="nav-toggle" class="hamburger" aria-label="Ouvrir le menu">
+        <span></span>
+      </label>
+    </header>
+
+    <main>
+      <div class="description">
+        <h2>Fonctionnalités</h2>
+        <p>
+          Le projet E.Carrechan comprend plusieurs fonctionnalités clés visant à
+          optimiser la gestion des stocks et du personnel au sein de
+          l'entreprise lors de la panne.
+        </p>
+      </div>
+      <div class="information">
+        <section>
+          <h3>Module de Gestion du Personnel</h3>
+          <h4>fonctionGestion-p.c</h4>
+          <p>Ce module s'occupe de la gestion des employés de l'entreprise.</p>
+          <p><strong>Les fonctionnalités incluent :</strong></p>
+          <ul>
+            <li>
+              Lit les données ligne par ligne depuis l’entrée standard et extrait : le nom, le genre et la ville de chaque personne.
+            </li>
+            <li>
+                Stocke ces informations dans des tableaux séparés pour les noms, les genres et les villes, et compte le nombre total de                   personnes lues.
+            </li>
+            <li>
+                Parcourt le tableau des genres pour compter et afficher le nombre d’hommes et de femmes.
+            </li>
+            <li>
+                Identifie les villes où au moins deux personnes habitent, et affiche ces villes avec la liste des personnes                               correspondantes (utile pour organiser du covoiturage).
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Module Comptabilité</h3>
+          <h4>fonctionConta-j.c</h4>
+          <p>
+            Ce module est dédié au suivi comptable et/ou aux opérations
+            financières du système.
+          </p>
+          <p><strong>Les fonctionnalités incluent :</strong></p>
+          <ul>
+            <li>
+              Crée une liste chaînée à partir d’un tableau d’entiers.
+            </li>
+            <li>
+                Affiche tous les éléments de la liste dans l’ordre.
+            </li>
+            <li>
+                Calcule et retourne la longueur (le nombre de nœuds) de la liste.
+            </li>
+            <li>
+                Libère toute la mémoire allouée pour la liste afin d’éviter les fuites mémoire.
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Module Service Client</h3>
+          <h4>fonctionService-c.c</h4>
+          <p>
+            Ce module regroupe toutes les opérations liées au service client.
+          </p>
+          <p><strong>Les fonctionnalités incluent :</strong></p>
+          <ul>
+            <li>Parcourt toutes les lignes de données.</li>
+            <li>
+              Repère chaque nouveau client (grâce au tableau clientsTraites).
+            </li>
+            <li>
+              Lorsqu'un nouveau client est trouvé : il imprime l'en-tête de la
+              facture (date, caissière, ID du client…).
+            </li>
+            <li>
+              Ensuite il parcourt toutes les lignes pour récupérer tous les
+              produits achetés par ce client et les afficher avec : quantité,
+              prix unitaire, sous-total.
+            </li>
+            <li>
+              Enfin, il calcule et imprime le total de la facture, puis passe au
+              client suivant.
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="information">
+        <section>
+          <h3>Module de Lecture des données CSV</h3>
+          <h4>fonctionLecture_csv.c</h4>
+          <p>
+            Ce module s'occupe de l'importation des données à partir de fichiers
+            CSV.
+          </p>
+          <p><strong>Les fonctionnalités incluent :</strong></p>
+          <ul>
+            <li>lecture ligne par ligne</li>
+            <li>extraction des champs</li>
+            <li>
+              insertion automatique des données dans les structures du programme
+            </li>
+          </ul>
+          <p>Il permet de charger rapidement des données externes.</p>
+        </section>
+        <section>
+          <h3>Module d'Interface Fonctionnelle</h3>
+          <h4>fonction.h</h4>
+          <p><strong>Le fichier fonction.h contient :</strong></p>
+          <ul>
+            <li>les structures utilisées par le programme</li>
+            <li>les définitions globales utiles aux différents modules</li>
+          </ul>
+          <p>
+            Ce fichier centralise les déclarations et permet la communication
+            entre les modules.
+          </p>
+        </section>
+        <section>
+          <h3>Module de Gestion du Stock</h3>
+          <h4>fonctionGestion-s.c</h4>
+          <p>
+            Ce module contient toutes les fonctions liées au suivi et à la mise
+            à jour des articles vendus.
+          </p>
+          <p><strong>Les fonctionnalités incluent :</strong></p>
+          <ul>
+            <li>voir le produit le plus vendu</li>
+            <li>voir le produit le moins vendu</li>
+            <li>voir le total des ventes</li>
+          </ul>
+          <p>
+            Ce module centralise toute la logique liée aux produits sortis de
+            l'inventaire.
+          </p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

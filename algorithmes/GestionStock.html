@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Métadonnées et liens vers les fichiers CSS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/mobile.css" />
+    <link rel="stylesheet" href="../css/subnav.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>E.Carrechan</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-container">
+        <!-- Logo + Nom de l’entreprise, cliquable vers la page d’accueil -->
+        <a href="../index.html" class="logo-container">
+          <img src="../img/logo.png" alt="Logo" class="logo" />
+          <h1 id="company-name">
+            <span class="r">E</span>
+            <span class="v">.</span>
+            <span class="b">Carre</span>
+            <span class="v">chan</span>
+          </h1>
+        </a>
+      </div>
+
+      <!-- Barre de navigation principale -->
+      <nav>
+        <ul class="nav">
+          <li class="infobulle">
+            <a href="../algorithmes/index.html" class="active">Algorithmes</a>
+          </li>
+          <li class="infobulle">
+            <a href="../fonctionnalites/index.html">Fonctionnalités</a>
+          </li>
+          <li class="infobulle">
+            <a href="../difficultes/index.html">Difficultés</a>
+          </li>
+          <li class="infobulle">
+            <a href="../conclusion/index.html">Conclusion</a>
+          </li>
+          <li class="infobulle">
+            <a href="../mission/index.html">Missions</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- checkbox mobile seulement -->
+      <!-- Checkbox invisible -->
+      <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+
+      <!-- Icône hamburger -->
+      <label for="nav-toggle" class="hamburger" aria-label="Ouvrir le menu">
+        <span></span>
+      </label>
+    </header>
+
+    <main>
+      <div class="description">
+        <h2>Gestion des stocks</h2>
+      </div>
+
+      <div class="subnav-contour">
+        <!-- Sous-navigation propre à la section "Algorithmes" -->
+        <nav class="sub-nav">
+          <ul>
+            <li><a href="index.html">⬅</a></li>
+            <li><a href="LectureCSV.html">Lecture CSV</a></li>
+            <li>
+              <a href="GestionStock.html" class="active">Gestion Stock</a>
+            </li>
+            <li><a href="GestionPersonnel.html">Gestion Personnel</a></li>
+            <li><a href="ServiceClient.html">Service Client</a></li>
+            <li><a href="Comptabilite.html">Comptabilité</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <section class="code">
+        <h3>Fonctionnement</h3>
+        <pre>
+          <code>
+int quantiteGlobaleVendu(char entetes[NB_COLONNES][TAILLE_CHAMP],
+                         char produits[MAX_LIGNES][TAILLE_CHAMP],
+                         float quantites[MAX_LIGNES],
+                         char type[MAX_LIGNES][TAILLE_CHAMP],
+                         long long ean[MAX_LIGNES])
+{
+  // séparation produit et vrac
+  char produitsNoms[MAX_LIGNES][TAILLE_CHAMP];
+  float produitsSommes[MAX_LIGNES] = {0};
+  int nbProduits = 0;
+
+  char vracNoms[MAX_LIGNES][TAILLE_CHAMP];
+  float vracSommes[MAX_LIGNES] = {0};
+  int nbVrac = 0;
+  char quantiteGlob;
+
+  // Agrégation
+  for (int i = 0; i < MAX_LIGNES; i++)
+  {
+    if (quantites[i] == 0)
+      continue;
+
+    if (ean[i] != 0)
+    {
+      // Produit
+      int found = 0;
+      for (int j = 0; j < nbProduits; j++)
+      {
+        if (strcmp(produitsNoms[j], produits[i]) == 0)
+        {
+          produitsSommes[j] += quantites[i];
+          found = 1;
+          break;
+        }
+      }
+      if (!found)
+      {
+        strcpy(produitsNoms[nbProduits], produits[i]);
+        produitsSommes[nbProduits] = quantites[i];
+        nbProduits++;
+      }
+    }
+    else
+    {
+      // Vrac
+      int found = 0;
+      for (int j = 0; j < nbVrac; j++)
+      {
+        if (strcmp(vracNoms[j], produits[i]) == 0)
+        {
+          vracSommes[j] += quantites[i];
+          found = 1;
+          break;
+        }
+      }
+      if (!found)
+      {
+        strcpy(vracNoms[nbVrac], produits[i]);
+        vracSommes[nbVrac] = quantites[i];
+        nbVrac++;
+      }
+    }
+  }
+
+  // --- AFFICHAGE PRINCIPAL ---
+  printf("\n\n\n");
+  afficherLigneSeparation(87);
+  printf("\n\n");
+  printf(" %26s QUANTITÉ GLOBALE VENDUE  \n","");
+  printf("\n\n");
+
+  afficherLigneSeparation(87);
+  printf("\n|%28sPRODUIT%32s|%1sQUANTITÉ VENDUE%1s|\n\n", "", "", "", "");
+  afficherLigneSeparation(87);
+
+  for (int i = 0; i < nbProduits; i++)
+  {
+    printf("| %65s | %15.2f |\n", produitsNoms[i], produitsSommes[i]);
+    afficherLigneSeparation(87);
+  }
+
+  puts("\n\n");
+  afficherLigneSeparation(87);
+  printf("\n|%31sVRAC%31s|%5sQUANTITÉ VENDUE%3s|\n\n", "", "", "", "");
+  afficherLigneSeparation(87);
+  for (int i = 0; i < nbVrac; i++)
+  {
+    printf("| %65s | %15.2f |\n", vracNoms[i], vracSommes[i]);
+    afficherLigneSeparation(87);
+  }
+
+  printf("\nRésumé : %4d produits uniques, %4d vrac uniques.\n", nbProduits,
+         nbVrac);
+
+  // --- PRODUIT LE PLUS / MOINS VENDU ---
+  if (nbProduits > 0)
+  {
+    int maxProd = 0, minProd = 0;
+    for (int i = 1; i < nbProduits; i++)
+    {
+      if (produitsSommes[i] > produitsSommes[maxProd])
+        maxProd = i;
+      if (produitsSommes[i] < produitsSommes[minProd])
+        minProd = i;
+    }
+
+    printf("\nProduit le plus vendu : %s (%.2f unités)\n",
+           produitsNoms[maxProd], produitsSommes[maxProd]);
+    printf("Produit le moins vendu : %s (%.2f unités)\n",
+           produitsNoms[minProd], produitsSommes[minProd]);
+  }
+
+  if (nbVrac > 0)
+  {
+    int maxVrac = 0, minVrac = 0;
+    for (int i = 1; i < nbVrac; i++)
+    {
+      if (vracSommes[i] > vracSommes[maxVrac])
+        maxVrac = i;
+      if (vracSommes[i] < vracSommes[minVrac])
+        minVrac = i;
+    }
+
+    printf("\nVrac le plus vendu : %s (%.2f unités)\n",
+           vracNoms[maxVrac], vracSommes[maxVrac]);
+    printf("Vrac le moins vendu : %s (%.2f unités)\n",
+           vracNoms[minVrac], vracSommes[minVrac]);
+  }
+
+  return nbProduits + nbVrac;
+}
+
+          </code>
+        </pre>
+        <p>
+          L'algorithme de gestion des stocks agrège les quantités vendues par
+          catégorie (produits et vrac), affiche les totaux, et identifie les
+          articles les plus et les moins vendus.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

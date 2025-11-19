@@ -1,0 +1,293 @@
+/* Style global appliqué à tous les éléments */
+* {
+  font-family: "Nunito Sans", "Segoe UI", Roboto, sans-serif;
+  color: #ffffff;
+}
+
+#nav-toggle{
+  display:none;
+}
+
+/* En-tête du site : fixé en haut avec ombre et fond sombre */
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: rgb(12,17,22);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  min-height: 100px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  z-index: 1000;
+  border-bottom: 1px solid rgb(34,42,56);
+}
+
+/* Corps de page : fond gris foncé et largeur totale de l’écran */
+body {
+  background-color: #1e1e1e;
+  background-attachment: fixed;
+  color: white;
+  margin: 0;
+  width: 100vw;
+}
+
+/* Titres principaux (niveau h2) */
+h2 {
+  text-align: center;
+  margin-top: 65px;
+  margin-bottom: 65px;
+  font-size: 50px;
+  text-transform: uppercase;
+  height: 60px;
+  margin: 0 auto;
+  display: inline-block;
+  width: auto;
+  justify-content: center;
+}
+
+/* Changement de couleur au survol des titres */
+h2:hover, h3:hover {
+  color: #C8102E;
+  transition: color 0.2s ease;
+}
+
+/* Organisation générale du contenu principal */
+main {
+  display: grid;
+  grid-template-rows: auto auto;
+  margin-bottom: 0;
+  width: 100%;
+  min-height: 20vh;
+  align-items: start;
+}
+
+/* Conteneur pour les différentes sections d’informations */
+.information {
+  display: flex;
+  gap: 32px;
+  margin-left: 50px;
+  margin-right: 50px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* Style commun à chaque section */
+section {
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: rgb(12,17,22);
+  padding: 18px 22px;
+  border-radius: 8px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  min-width: 200px;
+  max-width: 420px;
+  width: auto;
+  min-height: 120px;
+  margin-left: 0;
+  margin-right: 0;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+/* Texte des éléments internes aux sections (hors titres) */
+section :not(h3) {
+  line-height: 30px;
+  font-size: 13px;
+}
+
+/* Effet au survol des sections : fond vert translucide + léger zoom */
+section:hover {
+  background-color: rgba(97, 160, 119, 0.2);
+  transition: background-color 0.3s ease;
+  transform: scale(1.04);
+}
+
+/* Titres de niveau 3 dans les sections */
+section h3 {
+  border-bottom: 2px solid #61a077;
+  padding-bottom: 5px;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Titres de niveau 4 dans les sections */
+section h4 {
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px solid #61a077;
+  padding-bottom: 3px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
+
+/* Mise en forme spécifique pour la section "difficultés" */
+section.difficultes {
+  text-align: center;
+  margin: 30px;
+  box-sizing: border-box;
+  max-width: none;
+  display: block;
+}
+
+/* Couleurs des lettres du logo */
+.r {
+  color: #C8102E;
+  gap: 0px;
+}
+
+.v {
+  color: #3A9D5D;
+  gap: 0px;
+}
+
+.b {
+  color: #0056A4;
+  gap: 0px;
+}
+
+/* Lien actif dans le menu principal : rouge et souligné en bleu */
+nav a.active {
+  color: #C8102E;
+  font-weight: bold;
+  border-bottom: 2px solid #0056A4;
+}
+
+/* Conteneur du logo et du nom de l’entreprise */
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  align-items: center;
+  gap: 0em;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+  width: auto;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+/* Taille et disposition du logo */
+.logo {
+  margin-top: 0px;
+  margin-right: 0;
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+/* Style du nom de l’entreprise à côté du logo */
+#company-name {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+}
+
+/* Zone descriptive sous le titre principal */
+div.description {
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* Texte à l’intérieur de la description */
+div.description p {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* Titre dans la zone description */
+div.description h2 {
+  margin: 0;
+  text-align: center;
+  align-items: center;
+  display: inline-flex;
+  font-size: 2em;
+}
+
+/* laisse les paragraphes de la conclusion sans style*/
+div p.conclusion{
+  font-style: normal;
+  font-size: medium;
+}
+
+/* change seulement la forme de la section dans la page conclusion */
+div section.conclusion{
+  max-width: none;
+}
+
+section#missions {
+  max-width:  50vw;     
+  box-sizing: border-box;
+  margin: 0 auto;        
+  padding: 18px;     
+}
+
+section#missions {
+  text-align: center; 
+}
+
+section#missions ul,
+section#missions ol {
+  display: inline-block; 
+  margin: 0.6rem auto;  
+  padding-left: 1.2rem;  
+  text-align: left;     
+  max-width: 80vw;        
+}
+
+section#missions ul li,
+section#missions ol li {
+  margin: 0.3rem 0;
+}
+
+section#missions ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+}
+
+section#missions ul > li {
+  display: grid;
+  grid-template-columns: max-content 1fr; 
+  gap: 1rem;
+  align-items: start;
+  margin: 0.75rem 0;
+}
+
+/* Le nom (strong) occupe la première colonne */
+section#missions ul > li > strong {
+  display: block;
+  white-space: nowrap;
+  font-weight: 700;
+  margin: 0; 
+  padding-right: 0.25rem;
+}
+
+/* La liste numérotée reste à droite, sans marge haute */
+section#missions ul > li > ol {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+section#missions ul > li {
+  border-bottom: #C8102E 2px solid;
+}
+
+section#missions ul > li:first-child {
+  border-top: #C8102E 2px solid;
+}

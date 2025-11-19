@@ -1,0 +1,39 @@
+/* Barre de sous-navigation : fond sombre et bords arrondis */
+nav.sub-nav {
+    background-color: rgb(12,17,22);
+    gap: 0px;
+    display: inline-flex;
+    width: auto;
+    border-radius: 6px;
+}
+
+/* Conteneur externe entourant la sous-navigation */
+div.subnav-contour {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Liste de la sous-navigation : affichée horizontalement */
+nav.sub-nav ul {
+    list-style: none;
+    display: flex;
+    padding: 10px 20px;
+    margin: 0;
+    gap: 0px;
+}
+
+/* Centre la sous-navigation horizontalement dans la page */
+.subnav-contour {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    background: none;
+}
+
+/* Ajoute un séparateur “|” entre les éléments de la sous-nav (sauf le dernier) */
+nav.sub-nav ul li:not(:last-child)::after {
+    content: "|";
+    color: white;
+}

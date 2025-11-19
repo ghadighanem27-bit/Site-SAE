@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/mobile.css" />
+    <link rel="stylesheet" href="../css/subnav.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>E.Carrechan</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-container">
+        <a href="../index.html" class="logo-container">
+          <img src="../img/logo.png" alt="Logo" class="logo" />
+          <h1 id="company-name">
+            <span class="r">E</span>
+            <span class="v">.</span>
+            <span class="b">Carre</span>
+            <span class="v">chan</span>
+          </h1>
+        </a>
+      </div>
+
+      <nav>
+        <ul class="nav">
+          <li class="infobulle">
+            <a href="../algorithmes/index.html" class="active">Algorithmes</a>
+          </li>
+          <li class="infobulle">
+            <a href="../fonctionnalites/index.html">Fonctionnalités</a>
+          </li>
+          <li class="infobulle">
+            <a href="../difficultes/index.html">Difficultés</a>
+          </li>
+          <li class="infobulle">
+            <a href="../conclusion/index.html">Conclusion</a>
+          </li>
+          <li class="infobulle">
+            <a href="../mission/index.html">Missions</a>
+          </li>
+        </ul>
+      </nav>
+
+      <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+      <label for="nav-toggle" class="hamburger" aria-label="Ouvrir le menu">
+        <span></span>
+      </label>
+    </header>
+
+    <main>
+      <div class="description">
+        <h2>Service client</h2>
+      </div>
+
+      <div class="subnav-contour">
+        <nav class="sub-nav">
+          <ul>
+            <li><a href="index.html">⬅</a></li>
+            <li><a href="LectureCSV.html">Lecture CSV</a></li>
+            <li><a href="GestionStock.html">Gestion Stock</a></li>
+            <li><a href="GestionPersonnel.html">Gestion Personnel</a></li>
+            <li>
+              <a href="ServiceClient.html" class="active">Service Client</a>
+            </li>
+            <li><a href="Comptabilite.html">Comptabilité</a></li>
+          </ul>
+        </nav>
+      </div>
+      <section class="code">
+        <h3>Fonctionnement</h3>
+        <pre>
+          <code>
+            
+int facture(char entetes[NB_COLONNES][TAILLE_CHAMP],
+            char produits[MAX_LIGNES][TAILLE_CHAMP],
+            float quantites[MAX_LIGNES],
+            float prixUnitaires[MAX_LIGNES],
+            int caissiere_id[MAX_LIGNES],
+            double client_id[MAX_LIGNES],
+            char dates[MAX_LIGNES][20])
+{
+    double clientsTraites[MAX_LIGNES]; 
+    int nbClients = 0;
+
+    for (int i = 0; i < MAX_LIGNES; i++) {
+        
+        if (strlen(produits[i]) == 0)
+            continue;
+
+        double idCourant = client_id[i];
+        if (idCourant == 0)  
+            continue;
+
+       
+        int dejaFait = 0;
+        for (int j = 0; j < nbClients; j++) {
+            if (clientsTraites[j] == idCourant) {
+                dejaFait = 1;
+                break;
+            }
+        }
+        if (dejaFait)
+            continue;
+
+        
+        clientsTraites[nbClients++] = idCourant;
+
+        
+        printf("================================================================================================================================\n");
+        printf("                                                      Ecarrchan \n");
+        printf("================================================================================================================================\n");
+        printf("Date: %s\n", dates[i]);
+        printf("Caissière id: %d\n", caissiere_id[i]);
+        printf("Client id: %.0f\n", idCourant);
+        printf("--------------------------------------------------------------------------------------------------------------------------------\n");
+        printf("%-62s| %-21s| %-21s| %-21s|\n", "Produit", "Qte", "Pu(€)", "Total(€)");
+        printf("--------------------------------------------------------------------------------------------------------------------------------\n");
+
+        float total = 0.0f;
+
+        
+        for (int k = 0; k < MAX_LIGNES; k++) {
+            if (strlen(produits[k]) == 0)
+                continue;
+
+            if (client_id[k] == idCourant) {
+                float sousTotal = quantites[k] * prixUnitaires[k];
+                total += sousTotal;
+                printf("%-62s| %-21f| %-21f| %-17f|\n",
+                       produits[k], quantites[k], prixUnitaires[k], sousTotal);
+            }
+        }
+
+        printf("--------------------------------------------------------------------------------------------------------------------------------\n");
+        printf("Total: %.2f €\n", total);
+        printf("================================================================================================================================\n");
+        printf("Merci de votre visite \n");
+        printf("================================================================================================================================\n\n");
+    }
+
+    return 0;
+}
+
+          </code>
+        </pre>
+        <p>
+          La fonction facture génère et affiche les factures pour chaque client
+          en regroupant les articles achetés et en calculant le total dû.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
