@@ -1,0 +1,79 @@
+/* Bloc <pre> contenant le code : formatage visuel du cadre */
+pre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;                       
+    background-color: rgb(40, 40, 39);     
+    text-align: left;
+    width: auto;
+    border-radius: 10px;             
+    padding-right: 10px;
+}
+
+/* Style du texte à l’intérieur du bloc de code */
+pre code {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #FFFFFF;
+    font-family: Fira Code, monospace;    
+    white-space: pre-wrap;                
+    word-break: break-word;                 
+    padding: 10px;
+    justify-self: center;
+}
+
+/* Paragraphe d’explication accompagnant chaque bloc de code */
+p.explication {
+    margin: 15px 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* Section contenant chaque bloc de code et son explication */
+section.code {
+    display: block;
+    margin-right: 20px;
+    width: 80vw;                           
+    margin-bottom: 50px;
+    justify-self: center;                  
+}
+
+/* Empêcher le code de déborder du bloc */
+section.code {
+  box-sizing: border-box;  
+  max-width: 100%;
+  width: 80vw;
+  overflow: hidden;
+}
+
+section.code pre,
+section.code code,
+pre {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  padding: 18px;
+  white-space: pre-wrap;    
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;     
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  overflow-x: auto;          
+  background: rgb(31,31,30); 
+  border-radius: 6px;
+}
+
+section.code:hover,
+section.code:hover pre,
+section.code:hover code {
+ 
+  transform: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
