@@ -120,10 +120,11 @@
 
     /* MISE EN PAGE MOBILE */
     main {
+        margin: 0;
         display: grid;
         grid-template-rows: auto;
         grid-auto-rows: auto;
-        padding: 1em;
+        padding: 0;
     }
 
     h2{
